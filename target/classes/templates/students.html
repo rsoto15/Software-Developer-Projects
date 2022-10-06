@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="style.css"> 
+    <title>Home Page</title>
+</head>
+<body>
+  <div class="topnav">
+    <a th:href="@{/students}">Students</a>
+    <a href="activities.html">Activities</a>
+    <a href="https://app.addevent.com/calendars/Du503442">Events</a>
+  </div>  
+    <h1>Students Management System</h1>
+    <a th:href="@{/}"><button class="open-button">Add Student</button></a>
+    <div style="overflow-y: scroll;">
+      <table>
+        <thead>
+          <tr>
+            <th>Student ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Grade</th>
+            <th>Assesment</th>
+            <th>ROI</th>
+            <th>Referal</th>
+            <th>Activity</th>
+          </tr>    
+        </thead>
+        <tbody>
+          <tr th:each="student: ${students}">
+            <td th:text="${student.studentID}"></td>
+            <td th:text="${student.firstName}"></td>
+            <td th:text="${student.lastName}"></td>
+            <td th:text="${student.grade}"></td>
+            <td th:text="${student.assessment}"></td>
+            <td th:text="${student.returnOI}"></td>
+            <td th:text="${student.referral}"></td>
+            <td> <a role="button" class="update" th:href="@{/(id = ${student.id})}">Update</a></td>
+          </tr>
+        </table>
+      </table>
+    </div>
+    
+    
+    <script>
+      function openForm() {
+        document.getElementById("myForm").style.display = "block";
+      }
+      
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+      }
+    </script>
+</body>
+</html>

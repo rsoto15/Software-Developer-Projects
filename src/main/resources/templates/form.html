@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Form</title>
+    <style>
+      .container {
+        position: absolute;
+        text-align: center;
+        border-style: solid;
+        left: 50%;
+        top: 50%;
+        width: 25%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        border-radius: 5px;
+        border-width: 2px;
+        border-width: 2px;
+        border-color: white;
+        background-color: white;
+    } 
+    
+    body {
+      background: white;
+    }
+    
+    
+    input[type=text], select, textarea {
+      width: 100%; 
+      padding: 12px; 
+      border: 1px solid rgb(103, 152, 216);;
+      border-radius: 4px;
+      box-sizing: border-box; 
+      margin-top: 6px; 
+      margin-bottom: 16px; 
+      resize: vertical;
+      font-size: 18px;
+    } 
+    
+    input[type=submit] {
+      background-color: black;
+      width: 100%;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size:16px;
+    }
+    
+    h2 {
+      color: rgb(103, 152, 216);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 36px;
+      font-weight: 600;    
+    }
+    
+    input[type=submit]:hover {
+      background-color: rgb(103, 152, 216);; 
+    }
+    
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .topnav {
+      overflow: hidden;
+      background-color: rgb(103, 152, 216);
+    }
+    
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+      
+    .topnav a:hover {
+      background-color: #ddd;
+      color: white;
+    }
+    </style>
+  </head>    
+  <body>
+    <div class="topnav">
+      <a th:href="@{/students}">Students</a>
+      <a href="activities.html">Activities</a>
+      <a href="https://app.addevent.com/calendars/Du503442">Events</a>
+    </div>   
+    <div class="container">
+      <h2>New Students Portal </h2>
+      <form method="post" th:object="${student}" th:action="@{/handleSubmit}"> 
+        <p style="color:red" th:errors="*{studentID}"></p>
+        <input type="text" placeholder="Student ID" th:field="*{studentID}">
+        <p style="color:red" th:errors="*{firstName}"></p>
+        <input type="text" placeholder="First Name" th:field="*{firstName}">  
+        <p style="color:red" th:errors="*{lastName}"></p>
+        <input type="text" placeholder="Last Name" th:field="*{lastName}">
+        <input type="text" placeholder="Grade" th:field="*{grade}">
+        <p style="color:red" th:errors="*{assessment}"></p>
+        <input type="text" placeholder="Assessment" th:field="*{assessment}">
+        <p style="color:red" th:errors="*{returnOI}"></p>
+        <input type="text" placeholder="ROI" th:field="*{returnOI}">
+        <p style="color:red" th:errors="*{referral}"></p>
+        <input type="text" placeholder="Referal" th:field="*{referral}">
+        <input type="hidden" th:field="*{id}">
+        <br><br>
+        <input type="submit" value="Submit">
+      </form>  
+    </div>
+</body>
+</html>

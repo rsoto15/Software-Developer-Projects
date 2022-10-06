@@ -1,0 +1,99 @@
+
+body {
+    background-color: white;
+}
+
+h1 {
+    color: rgb(103, 152, 216);
+    text-align: center;
+    border-radius: 400px;
+    margin: 15%;
+    top: 70%;
+}
+
+th {
+    border: 2px solid;
+    border-radius: 400px;
+    color: rgb(103, 152, 216);    
+    background-color: aliceblue;
+}
+
+td { 
+    border: 2px solid rgb(103, 152, 216);;
+    table-layout: fixed;
+    text-align: center;
+    border-radius: 4px;
+    padding: 12px 15px;
+}
+
+tr:nth-of-type(even) {
+    background-color: aliceblue;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: rgb(103, 152, 216);
+  }
+  
+  .topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+    
+  .topnav a:hover {
+    background-color: #ddd;
+    color: white;
+  }
+
+table {
+    position: absolute;
+    text-align: center;
+    border-style: solid;
+    left: 50%;
+    top: 50%;
+    width: 60%;
+    transform: translate(-50%, -50%);
+    border-color: rgb(103, 152, 216);
+    background-color: white;
+    border-collapse: collapse;
+} 
+
+.open-button {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    width: 60%;
+    right: auto;
+    margin-left: 19.5%;
+    border-color: rgb(103, 152, 216);
+    position: absolute;
+    text-align: center;
+    border-style: solid;
+    top: 60%;
+}
+
+.update {
+    display: inline-block;
+    width: 60%;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0.5em;
+    padding-top: 0.6em;
+    padding-bottom: 0.6em;
+    text-align: center;
+    font-size: 16px;
+    text-decoration: none;
+    border-color: rgb(103, 152, 216);
+    background-color: rgb(103, 152, 216);
+    color: white;
+    border-style: solid;
+    text-align: center;
+    border-style: solid;
+}
+
+.update:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+}
